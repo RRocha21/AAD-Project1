@@ -4,6 +4,10 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "nRst",
+					"strict" : false
+				},
+				{
 					"name" : "f[0]",
 					"strict" : false
 				},
@@ -40,6 +44,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "nGRst",
+					"strict" : false
+				},
+				{
 					"name" : "add[2]",
 					"strict" : false
 				},
@@ -49,10 +61,6 @@
 				},
 				{
 					"name" : "add[1]",
-					"strict" : false
-				},
-				{
-					"name" : "clk",
 					"strict" : false
 				}
 			]

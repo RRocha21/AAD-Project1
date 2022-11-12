@@ -38,13 +38,14 @@ ENTITY control IS
   PORT (nGRst: IN STD_LOGIC;
         clk:   IN STD_LOGIC;
         add:   IN STD_LOGIC_VECTOR (2 DOWNTO 0);
+		  nRst: OUT STD_LOGIC;
 		  f:		OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
         clkO:  OUT STD_LOGIC);
 END control;
 
 ARCHITECTURE structure OF control IS
   SIGNAL cLines: STD_LOGIC_VECTOR (8 DOWNTO 0);
-  SIGNAL iNRst, iNSetO: STD_LOGIC;
+  SIGNAL iNRst: STD_LOGIC;
   COMPONENT Rom
     PORT (add:  IN STD_LOGIC_VECTOR (2 DOWNTO 0);
           dOut: OUT STD_LOGIC_VECTOR (8 DOWNTO 0));
@@ -59,8 +60,8 @@ ARCHITECTURE structure OF control IS
   END COMPONENT;
 BEGIN
   cMem: Rom   PORT MAP (add, cLines);
-  nad1: gateNand2 PORT MAP (nGRst, cLines(2), iNRst);
-  nad3: gateNand2 PORT MAP (nGRst, cLines(1), iNSetO);
+  nad1: gateNand2 PORT MAP (nGRst, cLines(1), iNRst);
+  nad2: gateNand2 PORT MAP (clk, iNRst, nRst);
   nord: gateNor2  PORT MAP (clk, cLines(0), clkO);
   f <= cLines(8 DOWNTO 1);
 END structure;

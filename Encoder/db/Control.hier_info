@@ -1,19 +1,20 @@
 |Control
 nGRst => gateNand2:nad1.x1
-nGRst => gateNand2:nad3.x1
+clk => gateNand2:nad2.x1
 clk => gateNor2:nord.x1
 add[0] => Rom:cMem.add[0]
 add[1] => Rom:cMem.add[1]
 add[2] => Rom:cMem.add[2]
-f[0] << Rom:cMem.dOut[1]
-f[1] << Rom:cMem.dOut[2]
-f[2] << Rom:cMem.dOut[3]
-f[3] << Rom:cMem.dOut[4]
-f[4] << Rom:cMem.dOut[5]
-f[5] << Rom:cMem.dOut[6]
-f[6] << Rom:cMem.dOut[7]
-f[7] << Rom:cMem.dOut[8]
-clkO << gateNor2:nord.y
+nRst <= gateNand2:nad2.y
+f[0] <= Rom:cMem.dOut[1]
+f[1] <= Rom:cMem.dOut[2]
+f[2] <= Rom:cMem.dOut[3]
+f[3] <= Rom:cMem.dOut[4]
+f[4] <= Rom:cMem.dOut[5]
+f[5] <= Rom:cMem.dOut[6]
+f[6] <= Rom:cMem.dOut[7]
+f[7] <= Rom:cMem.dOut[8]
+clkO <= gateNor2:nord.y
 
 
 |Control|Rom:cMem
@@ -37,7 +38,7 @@ x2 => y.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|Control|gateNand2:nad3
+|Control|gateNand2:nad2
 x1 => y.IN0
 x2 => y.IN1
 y <= y.DB_MAX_OUTPUT_PORT_TYPE

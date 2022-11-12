@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Control
-Sat Nov 12 12:06:43 2022
+Sat Nov 12 17:55:32 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
 
 
@@ -14,11 +14,9 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "gateNand2:nad3"
- 10. Port Connectivity Checks: "gateNand2:nad1"
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -45,14 +43,14 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Nov 12 12:06:43 2022           ;
+; Analysis & Synthesis Status     ; Successful - Sat Nov 12 17:55:32 2022           ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Standard Edition ;
 ; Revision Name                   ; Control                                         ;
 ; Top-level Entity Name           ; control                                         ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
 ; Total registers                 ; 0                                               ;
-; Total pins                      ; 14                                              ;
+; Total pins                      ; 15                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 0                                               ;
 ; Total DSP Blocks                ; 0                                               ;
@@ -185,35 +183,36 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------+
 ; Estimate of Logic utilization (ALMs needed) ; 3            ;
 ;                                             ;              ;
-; Combinational ALUT usage for logic          ; 5            ;
+; Combinational ALUT usage for logic          ; 6            ;
 ;     -- 7 input functions                    ; 0            ;
 ;     -- 6 input functions                    ; 0            ;
-;     -- 5 input functions                    ; 0            ;
+;     -- 5 input functions                    ; 1            ;
 ;     -- 4 input functions                    ; 1            ;
 ;     -- <=3 input functions                  ; 4            ;
 ;                                             ;              ;
 ; Dedicated logic registers                   ; 0            ;
 ;                                             ;              ;
-; I/O pins                                    ; 14           ;
+; I/O pins                                    ; 15           ;
 ;                                             ;              ;
 ; Total DSP Blocks                            ; 0            ;
 ;                                             ;              ;
 ; Maximum fan-out node                        ; add[2]~input ;
-; Maximum fan-out                             ; 5            ;
-; Total fan-out                               ; 39           ;
-; Average fan-out                             ; 1.18         ;
+; Maximum fan-out                             ; 6            ;
+; Total fan-out                               ; 46           ;
+; Average fan-out                             ; 1.28         ;
 +---------------------------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name    ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------+-------------+--------------+
-; |control                   ; 5 (0)               ; 0 (0)                     ; 0                 ; 0          ; 14   ; 0            ; |control               ; control     ; work         ;
-;    |Rom:cMem|              ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |control|Rom:cMem      ; Rom         ; work         ;
-;    |gateNor2:nord|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |control|gateNor2:nord ; gateNor2    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------+-------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                        ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
+; |control                   ; 6 (0)               ; 0 (0)                     ; 0                 ; 0          ; 15   ; 0            ; |control                ; control     ; work         ;
+;    |Rom:cMem|              ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |control|Rom:cMem       ; Rom         ; work         ;
+;    |gateNand2:nad2|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |control|gateNand2:nad2 ; gateNand2   ; work         ;
+;    |gateNor2:nord|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |control|gateNor2:nord  ; gateNor2    ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -232,38 +231,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "gateNand2:nad3"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "gateNand2:nad1"                                                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; y    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 7                           ;
-;     normal            ; 7                           ;
-;         1 data inputs ; 2                           ;
+; arriav_lcell_comb     ; 9                           ;
+;     normal            ; 9                           ;
+;         1 data inputs ; 3                           ;
 ;         3 data inputs ; 4                           ;
 ;         4 data inputs ; 1                           ;
-; boundary_port         ; 14                          ;
+;         5 data inputs ; 1                           ;
+; boundary_port         ; 15                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.73                        ;
+; Average LUT depth     ; 1.79                        ;
 +-----------------------+-----------------------------+
 
 
@@ -282,13 +264,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
-    Info: Processing started: Sat Nov 12 12:06:38 2022
+    Info: Processing started: Sat Nov 12 17:55:27 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Control -c Control
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
 Info (12021): Found 4 design units, including 2 entities, in source file control.vhd
     Info (12022): Found design unit 1: Rom-behavior File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 11
-    Info (12022): Found design unit 2: control-structure File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 45
+    Info (12022): Found design unit 2: control-structure File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 46
     Info (12023): Found entity 1: Rom File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 6
     Info (12023): Found entity 2: control File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 37
 Info (12021): Found 16 design units, including 8 entities, in source file simplelogic.vhd
@@ -309,11 +291,9 @@ Info (12021): Found 16 design units, including 8 entities, in source file simple
     Info (12023): Found entity 7: gateXor8 File: C:/Users/win10/Github/AAD-Project1/Encoder/simpleLogic.vhd Line: 93
     Info (12023): Found entity 8: validOutput File: C:/Users/win10/Github/AAD-Project1/Encoder/simpleLogic.vhd Line: 117
 Info (12127): Elaborating entity "Control" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Control.vhd(47): object "iNRst" assigned a value but never read File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 47
-Warning (10036): Verilog HDL or VHDL warning at Control.vhd(47): object "iNSetO" assigned a value but never read File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 47
-Info (12128): Elaborating entity "Rom" for hierarchy "Rom:cMem" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 61
-Info (12128): Elaborating entity "gateNand2" for hierarchy "gateNand2:nad1" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 62
-Info (12128): Elaborating entity "gateNor2" for hierarchy "gateNor2:nord" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 64
+Info (12128): Elaborating entity "Rom" for hierarchy "Rom:cMem" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 62
+Info (12128): Elaborating entity "gateNand2" for hierarchy "gateNand2:nad1" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 64
+Info (12128): Elaborating entity "gateNor2" for hierarchy "gateNor2:nord" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 67
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "Rom:cMem|prog" is uninferred due to inappropriate RAM size File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 15
 Warning (113028): 2 out of 8 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/win10/Github/AAD-Project1/Encoder/db/Control.ram0_Rom_15fa0.hdl.mif Line: 1
@@ -321,15 +301,13 @@ Warning (113028): 2 out of 8 addresses are uninitialized. The Quartus Prime soft
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "nGRst" File: C:/Users/win10/Github/AAD-Project1/Encoder/Control.vhd Line: 38
-Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 21 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 5 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 4869 megabytes
-    Info: Processing ended: Sat Nov 12 12:06:43 2022
+    Info (21059): Implemented 10 output pins
+    Info (21061): Implemented 6 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
+    Info: Peak virtual memory: 4860 megabytes
+    Info: Processing ended: Sat Nov 12 17:55:32 2022
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:04
 

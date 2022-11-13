@@ -1,0 +1,57 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "busy",
+					"strict" : false
+				},
+				{
+					"name" : "y[0]",
+					"strict" : false
+				},
+				{
+					"name" : "y[1]",
+					"strict" : false
+				},
+				{
+					"name" : "y[2]",
+					"strict" : false
+				},
+				{
+					"name" : "y[3]",
+					"strict" : false
+				},
+				{
+					"name" : "y[4]",
+					"strict" : false
+				},
+				{
+					"name" : "y[5]",
+					"strict" : false
+				},
+				{
+					"name" : "y[6]",
+					"strict" : false
+				},
+				{
+					"name" : "y[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "GRst",
+					"strict" : false
+				},
+				{
+					"name" : "mI",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

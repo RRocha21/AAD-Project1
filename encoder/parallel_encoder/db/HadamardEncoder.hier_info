@@ -1,0 +1,71 @@
+|HadamardEncoder
+m[0] => xor1:xor1.b
+m[0] => xor1:xor2.b
+m[0] => xor1:xor3.b
+m[0] => xor1:xor4.b
+m[0] => x[7].DATAIN
+m[1] => xor1:xor1.a
+m[2] => xor1:xor0.b
+m[2] => xor1:xor3.a
+m[2] => xor1:xor6.a
+m[3] => xor1:xor0.a
+m[3] => xor1:xor2.a
+m[3] => xor1:xor5.a
+x[0] << xor1:xor7.c
+x[1] << xor1:xor6.c
+x[2] << xor1:xor5.c
+x[3] << xor1:xor1.c
+x[4] << xor1:xor4.c
+x[5] << xor1:xor3.c
+x[6] << xor1:xor2.c
+x[7] << m[0].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor0
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor1
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor2
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor3
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor4
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor5
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor6
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|HadamardEncoder|XOR1:xor7
+a => c.IN0
+b => c.IN1
+c <= c.DB_MAX_OUTPUT_PORT_TYPE
+
+

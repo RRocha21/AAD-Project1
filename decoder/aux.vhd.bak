@@ -1,0 +1,38 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.all;
+
+library logic;
+use logic.all;
+
+entity m0IsOne is
+	port(	y		: in std_logic_vector(7 downto 0);
+			res	: out std_logic);
+end m0IsOne;
+
+architecture Structural of m0IsOne is
+	signal c3, c2, c1, c0	: std_logic;
+	signal or_0, or_1, and_0, and_1	: std_logic;
+
+	component gateOR2
+		port(	x0, x1	: in std_logic;
+				y			: out std_logic);
+	end component;
+	component gateXOR2
+		port(	x0, x1	: in std_logic;
+				y			: out std_logic);
+	end component;
+	component gateAND3
+		port(	x0, x1, x2	: in std_logic;
+				y				: out std_logic);
+	end component;
+begin
+	xor20	: gateXOR2 port map(y(0), y(1), c0);
+	xor21	: gateXOR2 port map(y(2), y(3), c1);
+	xor22	: gateXOR2 port map(y(4), y(5), c2);
+	xor23	: gateXOR2 port map(y(6), y(7), c3);
+	or20	: gateOR2 port map(c1, c0, or_0);
+	or21	: gateOR2 port map(c3, c2, or_1);
+	and30	: gateAND3 port map(c3, c2, or_0, and_0);
+	and31	: gateAND3 port map(c1, c0, or_1, and_1);
+	or22	: gateOR2 port map(and_0, and_1, res);
+end Structural;

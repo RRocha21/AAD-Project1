@@ -1,0 +1,752 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+
+/*
+Copyright (C) 2019  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+
+HEADER
+{
+	VERSION = 1;
+	TIME_UNIT = ns;
+	DATA_OFFSET = 0.0;
+	DATA_DURATION = 1000.0;
+	SIMULATION_TIME = 0.0;
+	GRID_PHASE = 0.0;
+	GRID_PERIOD = 10.0;
+	GRID_DUTY_CYCLE = 50;
+}
+
+SIGNAL("clk")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("GRst")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("mI")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("y")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 8;
+	LSB_INDEX = 0;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("y[7]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[6]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[5]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[4]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+SIGNAL("y[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "y";
+}
+
+TRANSITION_LIST("clk")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 40.0;
+			LEVEL 0 FOR 40.0;
+		}
+	}
+}
+
+TRANSITION_LIST("GRst")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 1 FOR 810.0;
+			LEVEL 0 FOR 70.0;
+			LEVEL 1 FOR 120.0;
+		}
+	}
+}
+
+TRANSITION_LIST("mI")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1.644;
+			LEVEL 1 FOR 2.533;
+			LEVEL 0 FOR 4.133;
+			LEVEL 1 FOR 2.533;
+			LEVEL 0 FOR 4.133;
+			LEVEL 1 FOR 2.533;
+			LEVEL 0 FOR 2.491;
+			LEVEL 1 FOR 0.76;
+			LEVEL 0 FOR 3.15;
+			LEVEL 1 FOR 1.85;
+			LEVEL 0 FOR 3.15;
+			LEVEL 1 FOR 4.354;
+			LEVEL 0 FOR 2.667;
+			LEVEL 1 FOR 3.999;
+			LEVEL 0 FOR 2.667;
+			LEVEL 1 FOR 3.999;
+			LEVEL 0 FOR 2.667;
+			LEVEL 1 FOR 4.129;
+			LEVEL 0 FOR 4.6;
+			LEVEL 1 FOR 5.4;
+			LEVEL 0 FOR 4.6;
+			LEVEL 1 FOR 2.008;
+			LEVEL 0 FOR 3.747;
+			LEVEL 1 FOR 3.5;
+			LEVEL 0 FOR 6.5;
+			LEVEL 1 FOR 3.5;
+			LEVEL 0 FOR 2.753;
+			LEVEL 1 FOR 4.552;
+			LEVEL 0 FOR 4.8;
+			LEVEL 1 FOR 0.648;
+			LEVEL 0 FOR 2.957;
+			LEVEL 1 FOR 4.0;
+			LEVEL 0 FOR 6.0;
+			LEVEL 1 FOR 4.0;
+			LEVEL 0 FOR 6.834;
+			LEVEL 1 FOR 4.5;
+			LEVEL 0 FOR 1.709;
+			LEVEL 1 FOR 1.811;
+			LEVEL 0 FOR 6.5;
+			LEVEL 1 FOR 4.969;
+			LEVEL 0 FOR 5.5;
+			LEVEL 1 FOR 4.5;
+			LEVEL 0 FOR 5.5;
+			LEVEL 1 FOR 3.582;
+			LEVEL 0 FOR 5.1;
+			LEVEL 1 FOR 5.276;
+			LEVEL 0 FOR 6.5;
+			LEVEL 1 FOR 3.5;
+			LEVEL 0 FOR 6.5;
+			LEVEL 1 FOR 0.762;
+			LEVEL 0 FOR 5.823;
+			LEVEL 1 FOR 3.6;
+			LEVEL 0 FOR 6.4;
+			LEVEL 1 FOR 3.6;
+			LEVEL 0 FOR 0.577;
+			LEVEL 1 FOR 5.552;
+			LEVEL 0 FOR 10.8;
+			LEVEL 1 FOR 3.648;
+			LEVEL 0 FOR 0.957;
+			LEVEL 1 FOR 2.15;
+			LEVEL 0 FOR 2.85;
+			LEVEL 1 FOR 2.15;
+			LEVEL 0 FOR 5.795;
+			LEVEL 1 FOR 3.8;
+			LEVEL 0 FOR 6.2;
+			LEVEL 1 FOR 3.8;
+			LEVEL 0 FOR 3.381;
+			LEVEL 1 FOR 1.833;
+			LEVEL 0 FOR 1.5;
+			LEVEL 1 FOR 1.833;
+			LEVEL 0 FOR 1.5;
+			LEVEL 1 FOR 1.833;
+			LEVEL 0 FOR 0.456;
+			LEVEL 1 FOR 4.3;
+			LEVEL 0 FOR 5.7;
+			LEVEL 1 FOR 4.3;
+			LEVEL 0 FOR 6.08;
+			LEVEL 1 FOR 1.8;
+			LEVEL 0 FOR 3.2;
+			LEVEL 1 FOR 1.8;
+			LEVEL 0 FOR 2.912;
+			LEVEL 1 FOR 1.533;
+			LEVEL 0 FOR 1.8;
+			LEVEL 1 FOR 1.533;
+			LEVEL 0 FOR 1.8;
+			LEVEL 1 FOR 1.533;
+			LEVEL 0 FOR 1.671;
+			LEVEL 1 FOR 0.991;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 1.144;
+			LEVEL 0 FOR 2.93;
+			LEVEL 1 FOR 5.9;
+			LEVEL 0 FOR 1.17;
+			LEVEL 1 FOR 1.776;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.72;
+			LEVEL 0 FOR 4.2;
+			LEVEL 1 FOR 3.304;
+			LEVEL 0 FOR 6.465;
+			LEVEL 1 FOR 3.1;
+			LEVEL 0 FOR 4.076;
+			LEVEL 1 FOR 4.9;
+			LEVEL 0 FOR 1.459;
+			LEVEL 1 FOR 0.349;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 3.315;
+			LEVEL 0 FOR 12.4;
+			LEVEL 1 FOR 9.723;
+			LEVEL 0 FOR 4.3;
+			LEVEL 1 FOR 5.7;
+			LEVEL 0 FOR 4.3;
+			LEVEL 1 FOR 2.217;
+			LEVEL 0 FOR 5.3;
+			LEVEL 1 FOR 4.942;
+			LEVEL 0 FOR 1.6;
+			LEVEL 1 FOR 1.733;
+			LEVEL 0 FOR 1.6;
+			LEVEL 1 FOR 1.733;
+			LEVEL 0 FOR 1.6;
+			LEVEL 1 FOR 1.323;
+			LEVEL 0 FOR 2.571;
+			LEVEL 1 FOR 1.8;
+			LEVEL 0 FOR 3.2;
+			LEVEL 1 FOR 1.8;
+			LEVEL 0 FOR 4.021;
+			LEVEL 1 FOR 3.6;
+			LEVEL 0 FOR 6.4;
+			LEVEL 1 FOR 3.6;
+			LEVEL 0 FOR 7.032;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 4.533;
+			LEVEL 1 FOR 2.133;
+			LEVEL 0 FOR 0.511;
+			LEVEL 1 FOR 1.331;
+			LEVEL 0 FOR 2.45;
+			LEVEL 1 FOR 2.55;
+			LEVEL 0 FOR 2.45;
+			LEVEL 1 FOR 12.817;
+			LEVEL 0 FOR 8.2;
+			LEVEL 1 FOR 0.202;
+			LEVEL 0 FOR 3.45;
+			LEVEL 1 FOR 4.4;
+			LEVEL 0 FOR 2.461;
+			LEVEL 1 FOR 5.7;
+			LEVEL 0 FOR 7.158;
+			LEVEL 1 FOR 3.1;
+			LEVEL 0 FOR 3.731;
+			LEVEL 1 FOR 1.272;
+			LEVEL 0 FOR 1.4;
+			LEVEL 1 FOR 1.933;
+			LEVEL 0 FOR 1.4;
+			LEVEL 1 FOR 1.933;
+			LEVEL 0 FOR 1.4;
+			LEVEL 1 FOR 0.662;
+			LEVEL 0 FOR 3.815;
+			LEVEL 1 FOR 3.7;
+			LEVEL 0 FOR 6.3;
+			LEVEL 1 FOR 3.7;
+			LEVEL 0 FOR 2.485;
+			LEVEL 1 FOR 0.926;
+			LEVEL 0 FOR 4.067;
+			LEVEL 1 FOR 2.599;
+			LEVEL 0 FOR 4.067;
+			LEVEL 1 FOR 2.599;
+			LEVEL 0 FOR 4.067;
+			LEVEL 1 FOR 1.675;
+			LEVEL 0 FOR 0.127;
+			LEVEL 1 FOR 3.9;
+			LEVEL 0 FOR 6.448;
+			LEVEL 1 FOR 1.9;
+			LEVEL 0 FOR 3.1;
+			LEVEL 1 FOR 1.9;
+			LEVEL 0 FOR 3.887;
+			LEVEL 1 FOR 1.499;
+			LEVEL 0 FOR 1.834;
+			LEVEL 1 FOR 1.499;
+			LEVEL 0 FOR 1.834;
+			LEVEL 1 FOR 1.499;
+			LEVEL 0 FOR 1.019;
+			LEVEL 1 FOR 4.7;
+			LEVEL 0 FOR 12.892;
+			LEVEL 1 FOR 9.0;
+			LEVEL 0 FOR 4.097;
+			LEVEL 1 FOR 4.0;
+			LEVEL 0 FOR 4.865;
+			LEVEL 1 FOR 3.831;
+			LEVEL 0 FOR 4.5;
+			LEVEL 1 FOR 1.669;
+			LEVEL 0 FOR 1.556;
+			LEVEL 1 FOR 1.8;
+			LEVEL 0 FOR 3.2;
+			LEVEL 1 FOR 1.8;
+			LEVEL 0 FOR 2.871;
+			LEVEL 1 FOR 3.7;
+			LEVEL 0 FOR 5.073;
+			LEVEL 1 FOR 0.588;
+			LEVEL 0 FOR 3.0;
+			LEVEL 1 FOR 2.0;
+			LEVEL 0 FOR 3.0;
+			LEVEL 1 FOR 1.604;
+			LEVEL 0 FOR 1.967;
+			LEVEL 1 FOR 1.366;
+			LEVEL 0 FOR 1.967;
+			LEVEL 1 FOR 1.366;
+			LEVEL 0 FOR 1.967;
+			LEVEL 1 FOR 2.662;
+			LEVEL 0 FOR 2.9;
+			LEVEL 1 FOR 2.1;
+			LEVEL 0 FOR 2.9;
+			LEVEL 1 FOR 2.523;
+			LEVEL 0 FOR 4.3;
+			LEVEL 1 FOR 3.79;
+			LEVEL 0 FOR 2.563;
+			LEVEL 1 FOR 2.15;
+			LEVEL 0 FOR 2.85;
+			LEVEL 1 FOR 2.15;
+			LEVEL 0 FOR 0.287;
+			LEVEL 1 FOR 1.836;
+			LEVEL 0 FOR 5.1;
+			LEVEL 1 FOR 13.831;
+			LEVEL 0 FOR 9.0;
+			LEVEL 1 FOR 0.233;
+			LEVEL 0 FOR 1.158;
+			LEVEL 1 FOR 1.433;
+			LEVEL 0 FOR 1.9;
+			LEVEL 1 FOR 1.433;
+			LEVEL 0 FOR 1.9;
+			LEVEL 1 FOR 1.433;
+			LEVEL 0 FOR 3.428;
+			LEVEL 1 FOR 5.4;
+			LEVEL 0 FOR 5.378;
+			LEVEL 1 FOR 2.199;
+			LEVEL 0 FOR 4.467;
+			LEVEL 1 FOR 2.199;
+			LEVEL 0 FOR 4.467;
+			LEVEL 1 FOR 2.199;
+			LEVEL 0 FOR 1.006;
+			LEVEL 1 FOR 1.298;
+			LEVEL 0 FOR 2.7;
+			LEVEL 1 FOR 2.3;
+			LEVEL 0 FOR 2.7;
+			LEVEL 1 FOR 2.583;
+			LEVEL 0 FOR 5.6;
+			LEVEL 1 FOR 4.4;
+			LEVEL 0 FOR 5.6;
+			LEVEL 1 FOR 3.335;
+			LEVEL 0 FOR 1.9;
+			LEVEL 1 FOR 1.433;
+			LEVEL 0 FOR 1.9;
+			LEVEL 1 FOR 1.433;
+			LEVEL 0 FOR 1.9;
+			LEVEL 1 FOR 0.918;
+			LEVEL 0 FOR 2.731;
+			LEVEL 1 FOR 2.866;
+			LEVEL 0 FOR 3.8;
+			LEVEL 1 FOR 2.866;
+			LEVEL 0 FOR 3.8;
+			LEVEL 1 FOR 2.866;
+			LEVEL 0 FOR 1.071;
+			LEVEL 1 FOR 4.467;
+			LEVEL 0 FOR 5.3;
+			LEVEL 1 FOR 4.7;
+			LEVEL 0 FOR 5.3;
+			LEVEL 1 FOR 2.311;
+			LEVEL 0 FOR 6.6;
+			LEVEL 1 FOR 3.155;
+			LEVEL 0 FOR 6.5;
+			LEVEL 1 FOR 3.5;
+			LEVEL 0 FOR 6.5;
+			LEVEL 1 FOR 2.324;
+			LEVEL 0 FOR 14.0;
+			LEVEL 1 FOR 6.842;
+			LEVEL 0 FOR 4.6;
+			LEVEL 1 FOR 3.901;
+			LEVEL 0 FOR 4.714;
+			LEVEL 1 FOR 8.0;
+			LEVEL 0 FOR 7.286;
+		}
+	}
+}
+
+TRANSITION_LIST("y[7]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[6]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[5]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[4]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 1000.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 280.0;
+			LEVEL 1 FOR 320.0;
+			LEVEL 0 FOR 400.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 120.0;
+			LEVEL 1 FOR 160.0;
+			LEVEL 0 FOR 160.0;
+			LEVEL 1 FOR 160.0;
+			LEVEL 0 FOR 160.0;
+			LEVEL 1 FOR 50.0;
+			LEVEL 0 FOR 190.0;
+		}
+	}
+}
+
+TRANSITION_LIST("y[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 40.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 80.0;
+			LEVEL 1 FOR 80.0;
+			LEVEL 0 FOR 160.0;
+			LEVEL 1 FOR 80.0;
+		}
+	}
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "clk";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 0;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "GRst";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 1;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "mI";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 2;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 3;
+	TREE_LEVEL = 0;
+	CHILDREN = 4, 5, 6, 7, 8, 9, 10, 11;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[7]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 4;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[6]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 5;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[5]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 6;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[4]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 7;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 8;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 9;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "y[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 3;
+}
+
+TIME_BAR
+{
+	TIME = 0;
+	MASTER = TRUE;
+}
+;

@@ -5,15 +5,15 @@ clk => flipFlopDPET:ff0.clk
 clk => Register8bit:register80.clk
 mI => flipFlopDPET:ff0.D
 GRst => ControlUnit:control.GRst
-busy <= ControlUnit:control.busy
-y[0] <= Register8bit:register81.Q[0]
-y[1] <= Register8bit:register81.Q[1]
-y[2] <= Register8bit:register81.Q[2]
-y[3] <= Register8bit:register81.Q[3]
-y[4] <= Register8bit:register81.Q[4]
-y[5] <= Register8bit:register81.Q[5]
-y[6] <= Register8bit:register81.Q[6]
-y[7] <= Register8bit:register81.Q[7]
+busy << ControlUnit:control.busy
+y[0] << Register8bit:register81.Q[0]
+y[1] << Register8bit:register81.Q[1]
+y[2] << Register8bit:register81.Q[2]
+y[3] << Register8bit:register81.Q[3]
+y[4] << Register8bit:register81.Q[4]
+y[5] << Register8bit:register81.Q[5]
+y[6] << Register8bit:register81.Q[6]
+y[7] << Register8bit:register81.Q[7]
 
 
 |SerialEncoder|Counter3bit:counter3

@@ -333,7 +333,7 @@ VCC                          : K13       : power  :                   : 1.1V    
 GND                          : K14       : gnd    :                   :         :           :                
 VCC                          : K15       : power  :                   : 1.1V    :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K16       :        :                   :         : 7A        :                
-mI                           : K17       : input  : 2.5 V             :         : 5B        : N              
+y[6]                         : K17       : output : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : K18       : power  :                   : 2.5V    : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K19       :        :                   :         : 7A        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : K20       :        :                   :         : 7A        :                
@@ -355,12 +355,12 @@ GND                          : L13       : gnd    :                   :         
 VCC                          : L14       : power  :                   : 1.1V    :           :                
 GND                          : L15       : gnd    :                   :         :           :                
 VCC                          : L16       : power  :                   : 1.1V    :           :                
-y[6]                         : L17       : output : 2.5 V             :         : 5B        : N              
+y[0]                         : L17       : output : 2.5 V             :         : 5B        : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : L18       :        :                   :         : 5B        :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L19       :        :                   :         : 5B        :                
 VREFB5BN0                    : L20       : power  :                   :         : 5B        :                
 GND                          : L21       : gnd    :                   :         :           :                
-y[5]                         : L22       : output : 2.5 V             :         : 5B        : N              
+y[3]                         : L22       : output : 2.5 V             :         : 5B        : N              
 GND                          : M1        : gnd    :                   :         :           :                
 GND                          : M2        : gnd    :                   :         :           :                
 VCCH_GXBL                    : M3        : power  :                   : 2.5V    :           :                
@@ -378,11 +378,11 @@ GND                          : M14       : gnd    :                   :         
 VCC                          : M15       : power  :                   : 1.1V    :           :                
 clk                          : M16       : input  : 2.5 V             :         : 5B        : N              
 VCCPD5B                      : M17       : power  :                   : 2.5V    : 5B        :                
-y[4]                         : M18       : output : 2.5 V             :         : 5B        : N              
+mI                           : M18       : input  : 2.5 V             :         : 5B        : N              
 VCCIO5B                      : M19       : power  :                   : 2.5V    : 5B        :                
-GRst                         : M20       : input  : 2.5 V             :         : 5B        : N              
-y[3]                         : M21       : output : 2.5 V             :         : 5B        : N              
-y[7]                         : M22       : output : 2.5 V             :         : 5B        : N              
+y[2]                         : M20       : output : 2.5 V             :         : 5B        : N              
+y[1]                         : M21       : output : 2.5 V             :         : 5B        : N              
+GRst                         : M22       : input  : 2.5 V             :         : 5B        : N              
 GXB_NC                       : N1        :        :                   :         : B0L       :                
 GXB_NC                       : N2        :        :                   :         : B0L       :                
 GND                          : N3        : gnd    :                   :         :           :                
@@ -398,12 +398,12 @@ VCC                          : N12       : power  :                   : 1.1V    
 GND                          : N13       : gnd    :                   :         :           :                
 VCC                          : N14       : power  :                   : 1.1V    :           :                
 GND                          : N15       : gnd    :                   :         :           :                
-busy                         : N16       : output : 2.5 V             :         : 5B        : N              
+y[7]                         : N16       : output : 2.5 V             :         : 5B        : N              
 GND                          : N17       : gnd    :                   :         :           :                
 VCCPD5B                      : N18       : power  :                   : 2.5V    : 5B        :                
-y[2]                         : N19       : output : 2.5 V             :         : 5B        : N              
-y[0]                         : N20       : output : 2.5 V             :         : 5B        : N              
-y[1]                         : N21       : output : 2.5 V             :         : 5B        : N              
+busy                         : N19       : output : 2.5 V             :         : 5B        : N              
+y[4]                         : N20       : output : 2.5 V             :         : 5B        : N              
+y[5]                         : N21       : output : 2.5 V             :         : 5B        : N              
 GND                          : N22       : gnd    :                   :         :           :                
 GND                          : P1        : gnd    :                   :         :           :                
 GND                          : P2        : gnd    :                   :         :           :                

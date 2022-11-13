@@ -1,5 +1,5 @@
 Fitter report for SerialEncoder
-Sun Nov 13 20:19:57 2022
+Sun Nov 13 20:35:23 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -62,7 +62,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sun Nov 13 20:19:57 2022       ;
+; Fitter Status                   ; Successful - Sun Nov 13 20:35:23 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SerialEncoder                               ;
 ; Top-level Entity Name           ; SerialEncoder                               ;
@@ -70,7 +70,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 9 / 56,480 ( < 1 % )                        ;
-; Total registers                 ; 25                                          ;
+; Total registers                 ; 22                                          ;
 ; Total pins                      ; 12 / 268 ( 4 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 7,024,640 ( 0 % )                       ;
@@ -157,20 +157,17 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.5%      ;
+;     Processor 2            ;   0.2%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Fitter Netlist Optimizations                                                                                                                                                                                                                                            ;
-+--------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------+------------------+-----------------------+
-; Node                                       ; Action     ; Operation                                         ; Reason                     ; Node Port ; Node Port Name ; Destination Node                                     ; Destination Port ; Destination Port Name ;
-+--------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------+------------------+-----------------------+
-; clk~inputCLKENA0                           ; Created    ; Placement                                         ; Fitter Periphery Placement ;           ;                ;                                                      ;                  ;                       ;
-; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Counter3bit:counter3|flipFlopDPET:ff1|Q~DUPLICATE    ;                  ;                       ;
-; Register8bit:register80|flipFlopDPET:ff5|Q ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Register8bit:register80|flipFlopDPET:ff5|Q~DUPLICATE ;                  ;                       ;
-; Register8bit:register80|flipFlopDPET:ff7|Q ; Duplicated ; Router Logic Cell Insertion and Logic Duplication ; Routability optimization   ;           ;                ; Register8bit:register80|flipFlopDPET:ff7|Q~DUPLICATE ;                  ;                       ;
-+--------------------------------------------+------------+---------------------------------------------------+----------------------------+-----------+----------------+------------------------------------------------------+------------------+-----------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fitter Netlist Optimizations                                                                                                                                   ;
++------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
+; Node             ; Action  ; Operation ; Reason                     ; Node Port ; Node Port Name ; Destination Node ; Destination Port ; Destination Port Name ;
++------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
+; clk~inputCLKENA0 ; Created ; Placement ; Fitter Periphery Placement ;           ;                ;                  ;                  ;                       ;
++------------------+---------+-----------+----------------------------+-----------+----------------+------------------+------------------+-----------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -221,12 +218,12 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 +-------------------------------------------------------------+--------------------+-------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 9 / 56,480         ; < 1 % ;
 ; ALMs needed [=A-B+C]                                        ; 9                  ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 12 / 56,480        ; < 1 % ;
-;         [a] ALMs used for LUT logic and registers           ; 7                  ;       ;
-;         [b] ALMs used for LUT logic                         ; 1                  ;       ;
-;         [c] ALMs used for registers                         ; 4                  ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 16 / 56,480        ; < 1 % ;
+;         [a] ALMs used for LUT logic and registers           ; 5                  ;       ;
+;         [b] ALMs used for LUT logic                         ; 4                  ;       ;
+;         [c] ALMs used for registers                         ; 7                  ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 56,480         ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 56,480         ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 56,480         ; 0 %   ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -245,15 +242,15 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ;     -- 5 input functions                                    ; 7                  ;       ;
 ;     -- 4 input functions                                    ; 3                  ;       ;
 ;     -- <=3 input functions                                  ; 6                  ;       ;
-; Combinational ALUT usage for route-throughs                 ; 1                  ;       ;
+; Combinational ALUT usage for route-throughs                 ; 3                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 25                 ;       ;
+; Dedicated logic registers                                   ; 22                 ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 21 / 112,960       ; < 1 % ;
-;         -- Secondary logic registers                        ; 4 / 112,960        ; < 1 % ;
+;         -- Primary logic registers                          ; 22 / 112,960       ; < 1 % ;
+;         -- Secondary logic registers                        ; 0 / 112,960        ; 0 %   ;
 ;     -- By function:                                         ;                    ;       ;
 ;         -- Design implementation registers                  ; 22                 ;       ;
-;         -- Routing optimization registers                   ; 3                  ;       ;
+;         -- Routing optimization registers                   ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
 ; I/O pins                                                    ; 12 / 268           ; 4 %   ;
@@ -288,11 +285,11 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ; Impedance control blocks                                    ; 0 / 3              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.0% / 0.0% / 0.0% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 0.3% / 0.2% / 0.4% ;       ;
-; Maximum fan-out                                             ; 25                 ;       ;
-; Highest non-global fan-out                                  ; 25                 ;       ;
-; Total fan-out                                               ; 155                ;       ;
-; Average fan-out                                             ; 2.31               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 0.3% / 0.3% / 0.2% ;       ;
+; Maximum fan-out                                             ; 22                 ;       ;
+; Highest non-global fan-out                                  ; 22                 ;       ;
+; Total fan-out                                               ; 148                ;       ;
+; Average fan-out                                             ; 2.24               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
 
@@ -303,12 +300,12 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Logic utilization (ALMs needed / total ALMs on device)      ; 9 / 56480 ( < 1 % )   ; 0 / 56480 ( 0 % )              ;
 ; ALMs needed [=A-B+C]                                        ; 9                     ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 12 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 7                     ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 1                     ; 0                              ;
-;         [c] ALMs used for registers                         ; 4                     ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 16 / 56480 ( < 1 % )  ; 0 / 56480 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 5                     ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 4                     ; 0                              ;
+;         [c] ALMs used for registers                         ; 7                     ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 3 / 56480 ( < 1 % )   ; 0 / 56480 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 7 / 56480 ( < 1 % )   ; 0 / 56480 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 0 / 56480 ( 0 % )     ; 0 / 56480 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
@@ -327,18 +324,18 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ;     -- 5 input functions                                    ; 7                     ; 0                              ;
 ;     -- 4 input functions                                    ; 3                     ; 0                              ;
 ;     -- <=3 input functions                                  ; 6                     ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 1                     ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 3                     ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 21 / 112960 ( < 1 % ) ; 0 / 112960 ( 0 % )             ;
-;         -- Secondary logic registers                        ; 4 / 112960 ( < 1 % )  ; 0 / 112960 ( 0 % )             ;
+;         -- Primary logic registers                          ; 22 / 112960 ( < 1 % ) ; 0 / 112960 ( 0 % )             ;
+;         -- Secondary logic registers                        ; 0 / 112960 ( 0 % )    ; 0 / 112960 ( 0 % )             ;
 ;     -- By function:                                         ;                       ;                                ;
 ;         -- Design implementation registers                  ; 22                    ; 0                              ;
-;         -- Routing optimization registers                   ; 3                     ; 0                              ;
+;         -- Routing optimization registers                   ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
 ; Virtual pins                                                ; 0                     ; 0                              ;
@@ -355,8 +352,8 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 155                   ; 0                              ;
-;     -- Registered Connections                               ; 69                    ; 0                              ;
+;     -- Total Connections                                    ; 148                   ; 0                              ;
+;     -- Registered Connections                               ; 61                    ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -388,9 +385,9 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Termination Control Block ; Location assigned by ; Slew Rate ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
-; GRst ; M20   ; 5B       ; 89           ; 37           ; 37           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; clk  ; M16   ; 5B       ; 89           ; 35           ; 60           ; 19                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
-; mI   ; K17   ; 5B       ; 89           ; 37           ; 3            ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; GRst ; M22   ; 5B       ; 89           ; 36           ; 37           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; clk  ; M16   ; 5B       ; 89           ; 35           ; 60           ; 16                    ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
+; mI   ; M18   ; 5B       ; 89           ; 36           ; 20           ; 1                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; Fitter               ; no        ;
 +------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -399,15 +396,15 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 +------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 ; Name ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Z coordinate ; Output Register ; Output Enable Register ; Slew Rate ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination                       ; Termination Control Block ; Output Buffer Pre-emphasis ; Voltage Output Differential ; Output Buffer Delay ; Output Buffer Delay Control ; Location assigned by ; Output Enable Source ; Output Enable Group ;
 +------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
-; busy ; N16   ; 5B       ; 89           ; 35           ; 43           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[0] ; N20   ; 5B       ; 89           ; 35           ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[1] ; N21   ; 5B       ; 89           ; 35           ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[2] ; N19   ; 5B       ; 89           ; 36           ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[3] ; M21   ; 5B       ; 89           ; 37           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[4] ; M18   ; 5B       ; 89           ; 36           ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[5] ; L22   ; 5B       ; 89           ; 36           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[6] ; L17   ; 5B       ; 89           ; 37           ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
-; y[7] ; M22   ; 5B       ; 89           ; 36           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; busy ; N19   ; 5B       ; 89           ; 36           ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[0] ; L17   ; 5B       ; 89           ; 37           ; 20           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[1] ; M21   ; 5B       ; 89           ; 37           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[2] ; M20   ; 5B       ; 89           ; 37           ; 37           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[3] ; L22   ; 5B       ; 89           ; 36           ; 54           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[4] ; N20   ; 5B       ; 89           ; 35           ; 77           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[5] ; N21   ; 5B       ; 89           ; 35           ; 94           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[6] ; K17   ; 5B       ; 89           ; 37           ; 3            ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
+; y[7] ; N16   ; 5B       ; 89           ; 35           ; 43           ; no              ; no                     ; 1         ; no              ; no         ; no            ; no       ; Off          ; 2.5 V        ; Default          ; Series 50 Ohm without Calibration ; --                        ; no                         ; no                          ; 0                   ; Off                         ; Fitter               ; -                    ; -                   ;
 +------+-------+----------+--------------+--------------+--------------+-----------------+------------------------+-----------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-----------------------------------+---------------------------+----------------------------+-----------------------------+---------------------+-----------------------------+----------------------+----------------------+---------------------+
 
 
@@ -692,7 +689,7 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ; K14      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; K15      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; K16      ; 424        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
-; K17      ; 284        ; 5B       ; mI                              ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; K17      ; 284        ; 5B       ; y[6]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; K18      ;            ; 5B       ; VCCIO5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
 ; K19      ; 407        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
 ; K20      ; 405        ; 7A       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Column I/O   ;                 ; no       ; On           ;
@@ -714,12 +711,12 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ; L14      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; L15      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; L16      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
-; L17      ; 286        ; 5B       ; y[6]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; L17      ; 286        ; 5B       ; y[0]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; L18      ; 290        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; L19      ; 288        ; 5B       ; RESERVED_INPUT_WITH_WEAK_PULLUP ;        ;              ;                     ; Row I/O      ;                 ; no       ; On           ;
 ; L20      ;            ; 5B       ; VREFB5BN0                       ; power  ;              ;                     ; --           ;                 ; --       ; --           ;
 ; L21      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; L22      ; 283        ; 5B       ; y[5]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; L22      ; 283        ; 5B       ; y[3]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; M1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; M2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; M3       ;            ; --       ; VCCH_GXBL                       ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
@@ -737,11 +734,11 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ; M15      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; M16      ; 278        ; 5B       ; clk                             ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; M17      ;            ; 5B       ; VCCPD5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; M18      ; 282        ; 5B       ; y[4]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; M18      ; 282        ; 5B       ; mI                              ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; M19      ;            ; 5B       ; VCCIO5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; M20      ; 285        ; 5B       ; GRst                            ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; M21      ; 287        ; 5B       ; y[3]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; M22      ; 281        ; 5B       ; y[7]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; M20      ; 285        ; 5B       ; y[2]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; M21      ; 287        ; 5B       ; y[1]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; M22      ; 281        ; 5B       ; GRst                            ; input  ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; N1       ; 28         ; B0L      ; GXB_NC                          ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N2       ; 29         ; B0L      ; GXB_NC                          ;        ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N3       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -757,12 +754,12 @@ The pin-out file can be found in /home/diogo/ua/AAD/P1/encoder/serial_encoder/ou
 ; N13      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N14      ;            ; --       ; VCC                             ; power  ;              ; 1.1V                ; --           ;                 ; --       ; --           ;
 ; N15      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
-; N16      ; 276        ; 5B       ; busy                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; N16      ; 276        ; 5B       ; y[7]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; N17      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; N18      ;            ; 5B       ; VCCPD5B                         ; power  ;              ; 2.5V                ; --           ;                 ; --       ; --           ;
-; N19      ; 280        ; 5B       ; y[2]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; N20      ; 277        ; 5B       ; y[0]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
-; N21      ; 279        ; 5B       ; y[1]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; N19      ; 280        ; 5B       ; busy                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; N20      ; 277        ; 5B       ; y[4]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
+; N21      ; 279        ; 5B       ; y[5]                            ; output ; 2.5 V        ;                     ; Row I/O      ; N               ; no       ; Off          ;
 ; N22      ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; P1       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
 ; P2       ;            ;          ; GND                             ; gnd    ;              ;                     ; --           ;                 ; --       ; --           ;
@@ -959,35 +956,44 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node   ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name   ; Library Name ;
 +------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------+---------------+--------------+
-; |SerialEncoder               ; 8.5 (0.5)            ; 11.5 (0.5)                       ; 3.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (1)              ; 25 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 12   ; 0            ; |SerialEncoder                                          ; SerialEncoder ; work         ;
-;    |ControlUnit:control|     ; 0.8 (0.0)            ; 0.8 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control                      ; ControlUnit   ; work         ;
+; |SerialEncoder               ; 8.5 (0.5)            ; 15.0 (0.5)                       ; 6.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 16 (1)              ; 22 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 12   ; 0            ; |SerialEncoder                                          ; SerialEncoder ; work         ;
+;    |ControlUnit:control|     ; 0.9 (0.0)            ; 0.9 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control                      ; ControlUnit   ; work         ;
+;       |ROM_6x10:rom|         ; 0.0 (0.0)            ; 0.0 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|ROM_6x10:rom         ; ROM_6x10      ; work         ;
 ;       |gateNOR2:nor20|       ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateNOR2:nor20       ; gateNOR2      ; work         ;
 ;       |gateOR2:or20|         ; 0.2 (0.2)            ; 0.2 (0.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateOR2:or20         ; gateOR2       ; work         ;
-;       |gateXOR2:xor20|       ; 0.2 (0.2)            ; 0.2 (0.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateXOR2:xor20       ; gateXOR2      ; work         ;
-;    |Counter3bit:counter3|    ; 2.2 (0.0)            ; 2.2 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 4 (0)               ; 6 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3                     ; Counter3bit   ; work         ;
-;       |flipFlopDPET:ff0|     ; 0.8 (0.8)            ; 0.8 (0.8)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff0    ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff1|     ; 0.2 (0.2)            ; 0.6 (0.6)                        ; 0.4 (0.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff1    ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff2|     ; 0.4 (0.4)            ; 0.4 (0.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff2    ; flipFlopDPET  ; work         ;
-;       |gateOR2:or21|         ; 0.4 (0.4)            ; 0.4 (0.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|gateOR2:or21        ; gateOR2       ; work         ;
-;    |Register8bit:register80| ; 3.6 (0.0)            ; 5.2 (0.0)                        ; 1.6 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (0)               ; 10 (0)                    ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80                  ; Register8bit  ; work         ;
-;       |flipFlopDPET:ff0|     ; 0.3 (0.3)            ; 0.6 (0.6)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff1|     ; 0.5 (0.5)            ; 0.8 (0.8)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff2|     ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff2 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff3|     ; 0.5 (0.5)            ; 0.8 (0.8)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff3 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff4|     ; 0.4 (0.4)            ; 0.4 (0.4)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff4 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff5|     ; 0.5 (0.5)            ; 0.7 (0.7)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff5 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff6|     ; 0.2 (0.2)            ; 0.8 (0.8)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff7|     ; 0.5 (0.5)            ; 0.6 (0.6)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
-;    |Register8bit:register81| ; 0.5 (0.0)            ; 2.2 (0.0)                        ; 1.8 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81                  ; Register8bit  ; work         ;
-;       |flipFlopDPET:ff0|     ; -0.2 (-0.2)          ; 0.2 (0.2)                        ; 0.4 (0.4)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff1|     ; 0.0 (0.0)            ; 0.3 (0.3)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff2|     ; 0.2 (0.2)            ; 0.2 (0.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff2 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff3|     ; 0.0 (0.0)            ; 0.3 (0.3)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff3 ; flipFlopDPET  ; work         ;
+;       |gateXOR2:xor20|       ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateXOR2:xor20       ; gateXOR2      ; work         ;
+;    |Counter3bit:counter3|    ; 2.4 (0.0)            ; 2.6 (0.0)                        ; 0.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 3 (0)               ; 5 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3                     ; Counter3bit   ; work         ;
+;       |flipFlopDPET:ff0|     ; 1.0 (1.0)            ; 1.0 (1.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 2 (2)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff0    ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff1|     ; 0.2 (0.2)            ; 0.2 (0.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff1    ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff2|     ; 0.6 (0.6)            ; 0.7 (0.7)                        ; 0.1 (0.1)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 2 (2)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff2    ; flipFlopDPET  ; work         ;
+;       |gateOR2:or21|         ; 0.3 (0.3)            ; 0.7 (0.7)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|gateOR2:or21        ; gateOR2       ; work         ;
+;    |Register8bit:register80| ; -0.2 (0.0)           ; 3.5 (0.0)                        ; 3.7 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80                  ; Register8bit  ; work         ;
+;       |flipFlopDPET:ff0|     ; 0.0 (0.0)            ; 0.5 (0.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff1|     ; 0.0 (0.0)            ; 0.2 (0.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff2|     ; 0.0 (0.0)            ; 0.5 (0.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff2 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff3|     ; 0.0 (0.0)            ; 0.5 (0.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff3 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff4|     ; 0.0 (0.0)            ; 0.5 (0.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff4 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff5|     ; 0.0 (0.0)            ; 0.5 (0.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff5 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff6|     ; 0.0 (0.0)            ; 0.2 (0.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff7|     ; -0.2 (-0.2)          ; 0.5 (0.5)                        ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
+;    |Register8bit:register81| ; -0.2 (0.0)           ; 2.7 (0.0)                        ; 2.8 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 8 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81                  ; Register8bit  ; work         ;
+;       |flipFlopDPET:ff0|     ; -0.2 (-0.2)          ; 0.3 (0.3)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff1|     ; -0.2 (-0.2)          ; 0.3 (0.3)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff2|     ; 0.0 (0.0)            ; 0.3 (0.3)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff2 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff3|     ; -0.2 (-0.2)          ; 0.3 (0.3)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff3 ; flipFlopDPET  ; work         ;
 ;       |flipFlopDPET:ff4|     ; 0.0 (0.0)            ; 0.2 (0.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff4 ; flipFlopDPET  ; work         ;
 ;       |flipFlopDPET:ff5|     ; 0.0 (0.0)            ; 0.2 (0.2)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff5 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff6|     ; 0.2 (0.2)            ; 0.2 (0.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff7|     ; 0.0 (0.0)            ; 0.3 (0.3)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
-;    |flipFlopDPET:ff0|        ; 0.2 (0.2)            ; 0.5 (0.5)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|flipFlopDPET:ff0                         ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff6|     ; -0.2 (-0.2)          ; 0.3 (0.3)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff7|     ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
+;    |flipFlopDPET:ff0|        ; -0.2 (-0.2)          ; 0.3 (0.3)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 0 (0)               ; 1 (1)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|flipFlopDPET:ff0                         ; flipFlopDPET  ; work         ;
+;    |gateXOR2:xor20|          ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor20                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor21|          ; 0.7 (0.7)            ; 0.7 (0.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor21                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor22|          ; 0.3 (0.3)            ; 0.3 (0.3)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor22                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor23|          ; 0.7 (0.7)            ; 0.7 (0.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor23                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor24|          ; 0.7 (0.7)            ; 0.7 (0.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor24                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor25|          ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor25                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor26|          ; 0.7 (0.7)            ; 0.7 (0.7)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor26                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor27|          ; 0.5 (0.5)            ; 0.5 (0.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 1 (1)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor27                           ; gateXOR2      ; work         ;
 +------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1008,7 +1014,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; y[7] ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; clk  ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; GRst ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; mI   ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; mI   ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
 
 
@@ -1023,7 +1029,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; GRst                                          ;                   ;         ;
 ;      - ControlUnit:control|gateOR2:or20|y     ; 1                 ; 0       ;
 ; mI                                            ;                   ;         ;
-;      - flipFlopDPET:ff0|Q                     ; 1                 ; 0       ;
+;      - flipFlopDPET:ff0|Q                     ; 0                 ; 0       ;
 +-----------------------------------------------+-------------------+---------+
 
 
@@ -1032,9 +1038,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                   ; Location            ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; ControlUnit:control|gateNOR2:nor20|y~0 ; LABCELL_X88_Y35_N57 ; 9       ; Clock        ; no     ; --                   ; --               ; --                        ;
-; ControlUnit:control|gateOR2:or20|y     ; LABCELL_X88_Y35_N9  ; 25      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; clk                                    ; PIN_M16             ; 17      ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
+; ControlUnit:control|gateNOR2:nor20|y~0 ; LABCELL_X88_Y35_N27 ; 9       ; Clock        ; no     ; --                   ; --               ; --                        ;
+; ControlUnit:control|gateOR2:or20|y     ; LABCELL_X88_Y35_N9  ; 22      ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; clk                                    ; PIN_M16             ; 14      ; Clock        ; yes    ; Global Clock         ; GCLK10           ; --                        ;
 +----------------------------------------+---------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1043,7 +1049,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_M16  ; 17      ; Global Clock         ; GCLK10           ; --                        ;
+; clk  ; PIN_M16  ; 14      ; Global Clock         ; GCLK10           ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1052,21 +1058,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------+------------------------+
 ; Routing Resource Type        ; Usage                  ;
 +------------------------------+------------------------+
-; Block interconnects          ; 34 / 374,484 ( < 1 % ) ;
+; Block interconnects          ; 45 / 374,484 ( < 1 % ) ;
 ; C12 interconnects            ; 0 / 16,664 ( 0 % )     ;
-; C2 interconnects             ; 22 / 155,012 ( < 1 % ) ;
-; C4 interconnects             ; 8 / 72,600 ( < 1 % )   ;
+; C2 interconnects             ; 8 / 155,012 ( < 1 % )  ;
+; C4 interconnects             ; 5 / 72,600 ( < 1 % )   ;
 ; DQS bus muxes                ; 0 / 30 ( 0 % )         ;
 ; DQS-18 I/O buses             ; 0 / 30 ( 0 % )         ;
 ; DQS-9 I/O buses              ; 0 / 30 ( 0 % )         ;
-; Direct links                 ; 4 / 374,484 ( < 1 % )  ;
+; Direct links                 ; 14 / 374,484 ( < 1 % ) ;
 ; Global clocks                ; 1 / 16 ( 6 % )         ;
 ; Horizontal periphery clocks  ; 0 / 72 ( 0 % )         ;
-; Local interconnects          ; 16 / 112,960 ( < 1 % ) ;
+; Local interconnects          ; 9 / 112,960 ( < 1 % )  ;
 ; Quadrant clocks              ; 0 / 88 ( 0 % )         ;
-; R14 interconnects            ; 1 / 15,868 ( < 1 % )   ;
+; R14 interconnects            ; 2 / 15,868 ( < 1 % )   ;
 ; R14/C12 interconnect drivers ; 0 / 27,256 ( 0 % )     ;
-; R3 interconnects             ; 25 / 169,296 ( < 1 % ) ;
+; R3 interconnects             ; 14 / 169,296 ( < 1 % ) ;
 ; R6 interconnects             ; 19 / 330,800 ( < 1 % ) ;
 ; Spine clocks                 ; 1 / 480 ( < 1 % )      ;
 ; Wire stub REs                ; 0 / 20,834 ( 0 % )     ;
@@ -1195,7 +1201,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; clk             ; clk                  ; 9.1               ;
+; clk             ; clk                  ; 19.4              ;
 ; clk,I/O         ; clk                  ; 2.2               ;
 ; I/O             ; clk                  ; 1.7               ;
 +-----------------+----------------------+-------------------+
@@ -1208,22 +1214,23 @@ This will disable optimization of problematic paths and expose them for further 
 +--------------------------------------------+--------------------------------------------+-------------------+
 ; Source Register                            ; Destination Register                       ; Delay Added in ns ;
 +--------------------------------------------+--------------------------------------------+-------------------+
-; clk                                        ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 3.326             ;
-; Counter3bit:counter3|flipFlopDPET:ff2|Q    ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 1.663             ;
-; GRst                                       ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 1.663             ;
-; Counter3bit:counter3|flipFlopDPET:ff0|Q    ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 1.663             ;
-; Register8bit:register80|flipFlopDPET:ff2|Q ; Register8bit:register81|flipFlopDPET:ff2|Q ; 1.059             ;
-; Register8bit:register80|flipFlopDPET:ff6|Q ; Register8bit:register81|flipFlopDPET:ff6|Q ; 1.057             ;
-; Register8bit:register80|flipFlopDPET:ff7|Q ; Register8bit:register81|flipFlopDPET:ff7|Q ; 0.838             ;
-; Register8bit:register80|flipFlopDPET:ff5|Q ; Register8bit:register81|flipFlopDPET:ff5|Q ; 0.838             ;
-; Register8bit:register80|flipFlopDPET:ff0|Q ; Register8bit:register81|flipFlopDPET:ff0|Q ; 0.838             ;
-; Register8bit:register80|flipFlopDPET:ff3|Q ; Register8bit:register81|flipFlopDPET:ff3|Q ; 0.833             ;
-; Register8bit:register80|flipFlopDPET:ff4|Q ; Register8bit:register81|flipFlopDPET:ff4|Q ; 0.831             ;
-; Register8bit:register80|flipFlopDPET:ff1|Q ; Register8bit:register81|flipFlopDPET:ff1|Q ; 0.831             ;
-; Counter3bit:counter3|flipFlopDPET:ff0|nQ   ; Counter3bit:counter3|flipFlopDPET:ff0|Q    ; 0.304             ;
-; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; Counter3bit:counter3|flipFlopDPET:ff2|nQ   ; 0.296             ;
+; clk                                        ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 3.331             ;
+; Counter3bit:counter3|flipFlopDPET:ff2|Q    ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 1.666             ;
+; GRst                                       ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 1.666             ;
+; Counter3bit:counter3|flipFlopDPET:ff0|Q    ; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; 1.666             ;
+; flipFlopDPET:ff0|Q                         ; Register8bit:register81|flipFlopDPET:ff6|Q ; 0.862             ;
+; Counter3bit:counter3|flipFlopDPET:ff1|Q    ; Register8bit:register81|flipFlopDPET:ff6|Q ; 0.854             ;
+; Register8bit:register80|flipFlopDPET:ff7|Q ; Register8bit:register81|flipFlopDPET:ff7|Q ; 0.780             ;
+; Register8bit:register80|flipFlopDPET:ff0|Q ; Register8bit:register81|flipFlopDPET:ff0|Q ; 0.735             ;
+; Register8bit:register80|flipFlopDPET:ff6|Q ; Register8bit:register81|flipFlopDPET:ff6|Q ; 0.713             ;
+; Register8bit:register80|flipFlopDPET:ff1|Q ; Register8bit:register81|flipFlopDPET:ff1|Q ; 0.713             ;
+; Register8bit:register80|flipFlopDPET:ff2|Q ; Register8bit:register81|flipFlopDPET:ff2|Q ; 0.699             ;
+; Register8bit:register80|flipFlopDPET:ff3|Q ; Register8bit:register81|flipFlopDPET:ff3|Q ; 0.622             ;
+; Register8bit:register80|flipFlopDPET:ff5|Q ; Register8bit:register81|flipFlopDPET:ff5|Q ; 0.608             ;
+; Register8bit:register80|flipFlopDPET:ff4|Q ; Register8bit:register81|flipFlopDPET:ff4|Q ; 0.603             ;
+; Counter3bit:counter3|flipFlopDPET:ff0|nQ   ; Counter3bit:counter3|flipFlopDPET:ff2|nQ   ; 0.362             ;
 +--------------------------------------------+--------------------------------------------+-------------------+
-Note: This table only shows the top 14 path(s) that have the largest delay added for hold.
+Note: This table only shows the top 15 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -1262,17 +1269,17 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X78_Y35 to location X89_Y45
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
-Info (11888): Total time spent on timing analysis during the Fitter is 0.40 seconds.
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:03
+Info (11888): Total time spent on timing analysis during the Fitter is 0.34 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:05
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:04
 Info: Quartus Prime Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 2241 megabytes
-    Info: Processing ended: Sun Nov 13 20:19:58 2022
+    Info: Peak virtual memory: 2244 megabytes
+    Info: Processing ended: Sun Nov 13 20:35:23 2022
     Info: Elapsed time: 00:00:40
-    Info: Total CPU time (on all processors): 00:01:02
+    Info: Total CPU time (on all processors): 00:01:01
 
 

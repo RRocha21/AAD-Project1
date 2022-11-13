@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SerialEncoder
-Sun Nov 13 20:19:18 2022
+Sun Nov 13 20:34:43 2022
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -57,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Nov 13 20:19:18 2022       ;
+; Analysis & Synthesis Status     ; Successful - Sun Nov 13 20:34:43 2022       ;
 ; Quartus Prime Version           ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                   ; SerialEncoder                               ;
 ; Top-level Entity Name           ; SerialEncoder                               ;
@@ -226,24 +226,25 @@ https://fpgasoftware.intel.com/eula.
 ; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                     ; Entity Name   ; Library Name ;
 +------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+---------------+--------------+
 ; |SerialEncoder               ; 15 (0)              ; 22 (0)                    ; 0                 ; 0          ; 12   ; 0            ; |SerialEncoder                                          ; SerialEncoder ; work         ;
-;    |ControlUnit:control|     ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control                      ; ControlUnit   ; work         ;
+;    |ControlUnit:control|     ; 4 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control                      ; ControlUnit   ; work         ;
+;       |ROM_6x10:rom|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|ROM_6x10:rom         ; ROM_6x10      ; work         ;
 ;       |gateNOR2:nor20|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateNOR2:nor20       ; gateNOR2      ; work         ;
 ;       |gateOR2:or20|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateOR2:or20         ; gateOR2       ; work         ;
 ;       |gateXOR2:xor20|       ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|ControlUnit:control|gateXOR2:xor20       ; gateXOR2      ; work         ;
-;    |Counter3bit:counter3|    ; 4 (0)               ; 5 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3                     ; Counter3bit   ; work         ;
+;    |Counter3bit:counter3|    ; 3 (0)               ; 5 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3                     ; Counter3bit   ; work         ;
 ;       |flipFlopDPET:ff0|     ; 2 (2)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff0    ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff1|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff1    ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff1|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff1    ; flipFlopDPET  ; work         ;
 ;       |flipFlopDPET:ff2|     ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|flipFlopDPET:ff2    ; flipFlopDPET  ; work         ;
 ;       |gateOR2:or21|         ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Counter3bit:counter3|gateOR2:or21        ; gateOR2       ; work         ;
-;    |Register8bit:register80| ; 8 (0)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80                  ; Register8bit  ; work         ;
-;       |flipFlopDPET:ff0|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff1|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff2|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff2 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff3|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff3 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff4|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff4 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff5|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff5 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff6|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
-;       |flipFlopDPET:ff7|     ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
+;    |Register8bit:register80| ; 0 (0)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80                  ; Register8bit  ; work         ;
+;       |flipFlopDPET:ff0|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff1|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff2|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff2 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff3|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff3 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff4|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff4 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff5|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff5 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff6|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
+;       |flipFlopDPET:ff7|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register80|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
 ;    |Register8bit:register81| ; 0 (0)               ; 8 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81                  ; Register8bit  ; work         ;
 ;       |flipFlopDPET:ff0|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff0 ; flipFlopDPET  ; work         ;
 ;       |flipFlopDPET:ff1|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff1 ; flipFlopDPET  ; work         ;
@@ -254,6 +255,14 @@ https://fpgasoftware.intel.com/eula.
 ;       |flipFlopDPET:ff6|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff6 ; flipFlopDPET  ; work         ;
 ;       |flipFlopDPET:ff7|     ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|Register8bit:register81|flipFlopDPET:ff7 ; flipFlopDPET  ; work         ;
 ;    |flipFlopDPET:ff0|        ; 0 (0)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|flipFlopDPET:ff0                         ; flipFlopDPET  ; work         ;
+;    |gateXOR2:xor20|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor20                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor21|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor21                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor22|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor22                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor23|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor23                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor24|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor24                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor25|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor25                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor26|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor26                           ; gateXOR2      ; work         ;
+;    |gateXOR2:xor27|          ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SerialEncoder|gateXOR2:xor27                           ; gateXOR2      ; work         ;
 +------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -447,7 +456,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Sun Nov 13 20:19:08 2022
+    Info: Processing started: Sun Nov 13 20:34:33 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SerialEncoder -c SerialEncoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -495,13 +504,13 @@ Warning (19016): Clock multiplexers are found and protected
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 38 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 9 output pins
-    Info (21061): Implemented 26 logic cells
+    Info (21061): Implemented 34 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 993 megabytes
-    Info: Processing ended: Sun Nov 13 20:19:18 2022
+    Info: Peak virtual memory: 986 megabytes
+    Info: Processing ended: Sun Nov 13 20:34:43 2022
     Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:22
 

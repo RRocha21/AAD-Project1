@@ -19,7 +19,7 @@
 -- the top level entity of the current Quartus project .The user can use this   
 -- testbench to simulate his design using a third-party simulation tool .       
 -- *****************************************************************************
--- Generated on "11/13/2022 20:20:57"
+-- Generated on "11/13/2022 20:35:52"
                                                              
 -- Vhdl Test Bench(with test vectors) for design  :          SerialEncoder
 -- 
@@ -41,11 +41,11 @@ SIGNAL mI : STD_LOGIC;
 SIGNAL y : STD_LOGIC_VECTOR(7 DOWNTO 0);
 COMPONENT SerialEncoder
 	PORT (
-	busy : OUT STD_LOGIC;
+	busy : BUFFER STD_LOGIC;
 	clk : IN STD_LOGIC;
 	GRst : IN STD_LOGIC;
 	mI : IN STD_LOGIC;
-	y : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+	y : BUFFER STD_LOGIC_VECTOR(7 DOWNTO 0)
 	);
 END COMPONENT;
 BEGIN
